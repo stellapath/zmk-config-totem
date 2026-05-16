@@ -31,6 +31,13 @@
             layers = <0>;
             bindings = <&kp TAB>;
         };
+
+        combo_ctrl_grave {
+            timeout-ms = <50>;
+            key-positions = <21 22>;
+            layers = <0>;
+            bindings = <&kp LC(GRAVE)>;
+        };
     };
 
     keymap {
