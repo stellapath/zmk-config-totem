@@ -68,16 +68,6 @@
             bindings = <&kp>, <&kp>;
         };
 
-        sym_bspc: sym_bspc {
-            compatible = "zmk,behavior-hold-tap";
-            label = "SYM_BSPC";
-            #binding-cells = <2>;
-            flavor = "balanced";
-            tapping-term-ms = <200>;
-            quick-tap-ms = <120>;
-            require-prior-idle-ms = <80>;
-            bindings = <&mo>, <&kp>;
-        };
     };
 
     keymap {
@@ -88,7 +78,7 @@
            &kp Q  &kp W  &kp E     &kp R  &kp T        &kp Y      &kp U                      &kp I      &kp O    &kp P
            &kp A  &kp S  &kp D     &hm_shift LSHFT F  &kp G        &kp H      &hm_shift RSHFT J         &kp K      &kp L    &kp SEMI
 &kp LCTRL  &kp Z  &kp X  &kp C     &kp V  &kp B        &kp N      &kp M                      &kp COMMA  &kp DOT  &kp FSLH  &kp APOS
-                         &kp LGUI  &mo 1  &kp SPACE    &kp ENTER  &sym_bspc 2 BACKSPACE  &kp F19
+                         &kp LGUI  &mo 1  &kp SPACE    &kp ENTER  &mo 2  &kp BACKSPACE
             >;
         };
 
