@@ -103,7 +103,7 @@
            &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5    &kp NUMBER_6  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0
            &kp LBKT   &kp LBRC   &kp LPAR  &kp LT    &kp BSLH     &kp PIPE   &kp GT     &kp RPAR   &kp RBRC   &kp RBKT
 &trans     &kp GRAVE  &kp MINUS  &kp UNDER &kp EQUAL &kp PLUS     &kp TILDE  &kp SQT    &kp DQT    &kp FSLH   &kp QMARK  &trans
-                                 &trans    &trans    &trans       &none      &none      &none
+                                 &trans    &trans    &trans       &trans     &trans     &trans
             >;
         };
 
