@@ -85,22 +85,22 @@
            &kp Q  &kp W  &kp E  &kp R                 &kp T      &kp Y      &kp U                       &kp I       &kp O      &kp P
            &hml LGUI A  &hml LALT S  &hml LCTRL D  &hml LSHFT F  &kp G      &kp H      &hmr RSHFT J  &hmr RCTRL K  &hmr RALT L  &hmr RGUI SEMI
 &kp LCTRL  &kp Z  &kp X  &kp C  &kp V               &kp B      &kp N      &kp M                      &kp COMMA  &kp DOT  &kp FSLH  &kp APOS
-                         &mo 2  &mo 1               &kp SPACE  &kp ENTER  &mt RIGHT_SHIFT BACKSPACE  &lt 2 F19
+                         &mo 2  &mo 1               &kp SPACE  &kp ENTER  &mt RIGHT_SHIFT BACKSPACE  &kp F19
             >;
         };
 
-        nav_num {
+        nav {
             bindings = <
-        &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5    &kp NUMBER_6    &kp NUMBER_7    &kp NUMBER_8  &kp NUMBER_9     &kp NUMBER_0
-        &trans    &trans     &trans    &trans    &trans          &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &kp TAB
-&kp LG(GRAVE)  &kp LG(Z)  &kp LG(X)  &kp LG(C)    &kp LG(V)     &trans          &kp HOME        &kp PG_DN       &kp PG_UP     &kp END          &kp DELETE     &kp LG(ENTER)
+        &kp LG(Q)     &kp LG(W)  &kp LG(E)  &kp LG(R)  &kp LG(T)    &trans          &trans         &trans        &trans           &trans
+        &kp LG(A)     &kp LG(S)  &kp LG(D)  &kp LG(F)  &kp LG(G)    &kp LEFT_ARROW  &kp DOWN_ARROW &kp UP_ARROW  &kp RIGHT_ARROW  &kp TAB
+&kp LG(GRAVE)  &kp LG(Z)  &kp LG(X)  &kp LG(C)  &kp LG(V)  &kp LG(B)  &kp HOME        &kp PG_DN      &kp PG_UP     &kp END          &kp DELETE      &kp LG(ENTER)
                                     &trans        &trans        &trans          &kp LS(ENTER)   &trans          &trans
             >;
         };
 
-        sym_func {
+        sym_num {
             bindings = <
-           &kp EXCL   &kp AT     &kp HASH  &kp DLLR  &kp PRCNT    &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR   &kp RPAR
+           &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5    &kp NUMBER_6  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0
            &kp LBKT   &kp LBRC   &kp LPAR  &kp LT    &kp BSLH     &kp PIPE   &kp GT     &kp RPAR   &kp RBRC   &kp RBKT
 &trans     &kp GRAVE  &kp MINUS  &kp UNDER &kp EQUAL &kp PLUS     &kp TILDE  &kp SQT    &kp DQT    &kp FSLH   &kp QMARK  &trans
                                  &trans    &trans    &trans       &none      &none      &none
