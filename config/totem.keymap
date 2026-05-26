@@ -46,6 +46,13 @@
             bindings = <&kp F19>;
         };
 
+        combo_backspace {
+            timeout-ms = <50>;
+            key-positions = <18 19>;
+            layers = <0>;
+            bindings = <&kp BACKSPACE>;
+        };
+
     };
 
     behaviors {
@@ -75,6 +82,22 @@
             bindings = <&kp>, <&kp>;
         };
 
+        td_sym_alt: tap_dance_sym_alt {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_SYM_ALT";
+            #binding-cells = <0>;
+            tapping-term-ms = <150>;
+            bindings = <&mo 2>, <&kp LALT>;
+        };
+
+        td_num_gui: tap_dance_num_gui {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_NUM_GUI";
+            #binding-cells = <0>;
+            tapping-term-ms = <150>;
+            bindings = <&mo 3>, <&kp LGUI>;
+        };
+
     };
 
     keymap {
@@ -82,28 +105,37 @@
 
         base {
             bindings = <
-            &kp Q         &kp W        &kp E        &kp R        &kp T      &kp Y  &kp U  &kp I      &kp O    &kp P
-            &hml LCTRL A  &hml LALT S  &hml LGUI D  &kp F        &kp G      &kp H  &kp J  &kp K      &kp L    &kp SEMI
-&kp LCTRL   &hml LSHFT Z  &kp X        &kp C        &kp V        &kp B      &kp N  &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp APOS
-                          &mo 2        &kp LGUI     &kp SPACE    &kp ENTER  &mt RIGHT_SHIFT BACKSPACE &lt 1 F19 
+            &kp Q         &kp W  &kp E  &kp R       &kp T      &kp Y  &kp U  &kp I      &kp O    &kp P
+            &hml LCTRL A  &kp S  &kp D  &kp F       &kp G      &kp H  &kp J  &kp K      &kp L    &kp SEMI
+&kp LCTRL   &hml LSHFT Z  &kp X  &kp C  &kp V       &kp B      &kp N  &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp APOS
+                          &td_sym_alt  &td_num_gui  &kp SPACE  &kp ENTER  &mo 1  &kp RIGHT_SHIFT
             >;
         };
 
         nav {
             bindings = <
-        &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5    &kp NUMBER_6    &kp NUMBER_7    &kp NUMBER_8  &kp NUMBER_9     &kp NUMBER_0
-        &trans     &trans  &trans  &trans  &trans    &kp LEFT_ARROW  &kp DOWN_ARROW &kp UP_ARROW  &kp RIGHT_ARROW  &kp TAB
-&trans  &trans     &trans  &trans  &trans  &trans    &kp HOME        &kp PG_DN      &kp PG_UP     &kp END          &kp DELETE      &trans
-                                    &trans        &trans        &trans          &kp LS(ENTER)   &trans          &trans
+        &trans  &trans  &trans  &trans  &trans    &trans            &trans         &trans        &trans           &kp DELETE
+        &trans  &trans  &trans  &trans  &trans    &kp LEFT_ARROW    &kp DOWN_ARROW &kp UP_ARROW  &kp RIGHT_ARROW  &kp BACKSPACE
+&trans  &trans  &trans  &trans  &trans  &trans    &kp HOME          &kp PG_DN      &kp PG_UP     &kp END          &kp ENTER      &trans
+                        &trans  &trans  &trans    &kp LS(ENTER)     &trans         &trans
             >;
         };
 
         sym {
             bindings = <
-           &kp EXCL   &kp AT     &kp HASH  &kp DLLR  &kp PRCNT    &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR   &kp RPAR
-           &kp LBKT   &kp LBRC   &kp LPAR  &kp LT    &kp BSLH     &kp PIPE   &kp GT     &kp RPAR   &kp RBRC   &kp RBKT
-&trans     &kp GRAVE  &kp MINUS  &kp UNDER &kp EQUAL &kp PLUS     &kp TILDE  &kp SQT    &kp DQT    &kp FSLH   &kp QMARK  &trans
-                                 &trans    &trans    &trans       &trans     &trans     &trans
+        &kp EXCL   &kp AT     &kp HASH  &kp DLLR  &kp PRCNT    &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR   &kp RPAR
+        &kp LBKT   &kp LBRC   &kp LPAR  &kp LT    &kp BSLH     &kp PIPE   &kp GT     &kp RPAR   &kp RBRC   &kp RBKT
+&trans  &kp GRAVE  &kp MINUS  &kp UNDER &kp EQUAL &kp PLUS     &kp TILDE  &kp SQT    &kp DQT    &kp FSLH   &kp QMARK  &trans
+                              &trans    &trans    &trans       &trans     &trans     &trans
+            >;
+        };
+
+        num {
+            bindings = <
+        &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4    &kp NUMBER_5  &kp NUMBER_6   &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0
+        &trans        &trans        &trans        &trans          &trans        &trans         &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &trans
+&trans  &trans        &trans        &trans        &trans          &trans        &trans         &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans      &trans
+                                    &trans        &trans          &trans        &kp LS(ENTER)  &kp NUMBER_0  &kp DOT
             >;
         };
 
@@ -128,7 +160,7 @@
 
         device {
             if-layers = <1 2>;
-            then-layer = <3>;
+            then-layer = <4>;
         };
     };
 };
