@@ -39,6 +39,13 @@
             bindings = <&kp LC(GRAVE)>;
         };
 
+        combo_lang {
+            timeout-ms = <50>;
+            key-positions = <29 30>;
+            layers = <0>;
+            bindings = <&kp F19>;
+        };
+
     };
 
     behaviors {
@@ -68,6 +75,17 @@
             bindings = <&kp>, <&kp>;
         };
 
+        lsk: layer_sticky_key {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LSK";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <180>;
+            quick-tap-ms = <120>;
+            require-prior-idle-ms = <100>;
+            bindings = <&mo>, <&sk>;
+        };
+
     };
 
     keymap {
@@ -75,19 +93,19 @@
 
         base {
             bindings = <
-            &kp Q         &kp W  &kp E  &kp R       &kp T      &kp Y  &kp U  &kp I      &kp O    &kp P
-            &hml LCTRL A  &kp S  &kp D  &kp F       &kp G      &kp H  &kp J  &kp K      &kp L    &kp SEMI
-&kp LCTRL   &hml LSHFT Z  &kp X  &kp C  &kp V       &kp B      &kp N  &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp APOS
-                          &mo 2  &mo 3  &kp SPACE   &kp ENTER  &mo 1  &kp RIGHT_SHIFT
+            &kp Q  &kp W  &kp E  &kp R  &kp T      &kp Y      &kp U  &kp I      &kp O    &kp P
+            &kp A  &kp S  &kp D  &kp F  &kp G      &kp H      &kp J  &kp K      &kp L    &kp SEMI
+&kp LCTRL   &kp Z  &kp X  &kp C  &kp V  &kp B      &kp N      &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp APOS
+                          &lsk 2 LALT  &lsk 3 LGUI  &kp SPACE  &kp ENTER  &mo 1  &kp RIGHT_SHIFT
             >;
         };
 
         nav {
             bindings = <
-        &trans  &trans  &trans  &trans  &trans    &trans            &trans         &trans        &trans           &kp DELETE
-        &trans  &trans  &trans  &trans  &trans    &kp LEFT_ARROW    &kp DOWN_ARROW &kp UP_ARROW  &kp RIGHT_ARROW  &kp BACKSPACE
-&trans  &trans  &trans  &trans  &trans  &trans    &kp HOME          &kp PG_DN      &kp PG_UP     &kp END          &kp F19        &trans
-                        &kp LALT  &kp LGUI  &trans    &kp LS(ENTER)     &trans         &trans
+        &trans  &trans  &trans  &trans  &trans    &trans          &trans         &trans        &trans           &kp DELETE
+        &trans  &trans  &trans  &trans  &trans    &kp LEFT_ARROW  &kp DOWN_ARROW &kp UP_ARROW  &kp RIGHT_ARROW  &kp BACKSPACE
+&trans  &trans  &trans  &trans  &trans  &trans    &kp HOME        &kp PG_DN      &kp PG_UP     &kp END          &kp F19        &trans
+                        &trans  &trans  &trans    &kp LS(ENTER)   &trans         &trans
             >;
         };
 
